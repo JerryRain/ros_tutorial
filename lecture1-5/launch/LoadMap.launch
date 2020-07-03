@@ -1,0 +1,10 @@
+<launch>  
+   <!-- Run Gazebo with turtlebot --> 
+   <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch"/>   
+
+   <!-- Load existing map -->
+   <node name="map_server" pkg="map_server" type="map_server" args="$(find turtlebot_gazebo)/maps/playground.yaml" /> 
+
+   <!-- Open rviz -->
+   <include file="$(find turtlebot_rviz_launchers)/launch/view_robot.launch"/> 
+</launch>
